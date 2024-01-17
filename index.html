@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío 14</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <form id="form" onsubmit="onSubmit(event)">
+        <div class="">
+          <label for="name" class="form-label">Primer nombre:</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="">
+            <label for="lastName" class="form-label">Primer apellido:</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" required>
+          </div>
+        <div class="">
+            <label class="form-label">Tipo de documento</label>
+
+            <input type="radio" class="form-radio" id="dni" name="doc" checked>
+            <label for="dni" class="form-label">DNI</label>
+
+            <input type="radio" class="form-radio" id="cuil" name="doc">
+            <label for="cuil" class="form-label">CUIL</label>
+        </div>
+
+
+
+
+
+
+
+        <button type="submit" class="">Enviar</button>
+    </form>
+    <script src="../js/validations.js"></script>
+    <script src="../js/upload.js"></script>
+</body>
+</html>
