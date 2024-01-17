@@ -1,50 +1,29 @@
-
-const saveGame = game => {
-    const form = document.getElementById("form")
-    const initialValue = localStorage.getItem("games") || JSON.stringify([])
+const savePerson = person => {
+    const form = document.getElementById("formPerson")
+    const initialValue = localStorage.getItem("persons") || JSON.stringify([])
     const values = JSON.parse(initialValue)
-    // const id = Math.floor(Math.random() * 9999)
-    const gameWithId = {
-        // id,
+    const personWithId = {
         id: values.length + 1,
-        ...game
+        ...person
     }
     if (values.length) {
-        const newValues = [ ...values, gameWithId ]
+        const newValues = [ ...values, personWithId ]
         const newValStg = JSON.stringify(newValues)
-        localStorage.setItem("games", newValStg)
+        localStorage.setItem("persons", newValStg)
     } else {
-        const initialGames = JSON.stringify([gameWithId])
-        localStorage.setItem("games", initialGames)
+        const initialPerson = JSON.stringify([personWithId])
+        localStorage.setItem("persons", initialPerson)
     }
     form.reset()
-    alert("El juego ha sido guardado correctamente")
+    alert("Tus datos fueron enviados correctamente")
 }
 
 const onSubmit = e => {
     e.preventDefault()
     let validForm = true
     const nameInput = document.getElementById("name")
-    const priceInput = document.getElementById("price")
-    const stockInput = document.getElementById("stock")
-    const brandInput = document.getElementById("brand")
-    const categoryInput = document.getElementById("category")
-    const shortDescriptionInput = document.getElementById("shortDescription")
-    const longDescriptionInput = document.getElementById("longDescription")
-    const freeDeliverInput = document.getElementById("freeDeliver")
-    const ageFromInput = document.getElementById("ageFrom")
-    const ageToInput = document.getElementById("ageTo")
-    const photoInput = document.getElementById("photo")
+    const lastNameInput = document.getElementById("lastName")
 
-    const nameError = document.getElementById("nameError")
-    const priceError = document.getElementById("priceError")
-    const stockError = document.getElementById("stockError")
-    const brandError = document.getElementById("brandError")
-    const categoryError = document.getElementById("categoryError")
-    const shortDescriptionError = document.getElementById("shortDescriptionError")
-    const ageFromError = document.getElementById("ageFromError")
-    const ageToError = document.getElementById("ageToError")
-    
     // Nombre *
     if (validateStrings(nameInput.value)) {
         const validStg = validateStgLength(nameInput.value, 2, 30)
@@ -192,20 +171,10 @@ const onSubmit = e => {
     }
     
     if (validForm) {
-        const game = {
+        const person = {
             name: nameInput.value,
-            price: parseFloat(priceInput.value),
-            stock: parseInt(stockInput.value),
-            brand: brandInput.value,
-            category: categoryInput.value,
-            shortDescription: shortDescriptionInput.value,
-            description: longDescriptionInput.value,
-            freeDeliver: freeDeliverInput.checked,
-            ageFrom: ageFromInput.value === "" ? "" : parseInt(ageFromInput.value),
-            ageTo: ageToInput.value === "" ? "" : parseInt(ageToInput.value),
-            photo: photoInput.value,
+            lastName: nameInput.value,
         }
-        saveGame(game)
-    }
-    
+        savePerson(person)
+    } 
 }
