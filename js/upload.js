@@ -3,13 +3,14 @@ const onSubmit = e => {
     let validForm = true;
     const nameInput = document.getElementById("name");
     const lastNameInput = document.getElementById("lastName");
-    // const docInput = document.getElementById("doc");
+    const dniInput = document.getElementById("dni");
+    const cuilInput = document.getElementById("cuil");
     // const numDocInput = document.getElementById("numDoc");
     // const adressInput = document.getElementById("adress");
 
     const nameError = document.getElementById("nameError");
     const lastNameError = document.getElementById("lastNameError");
-    // const docError = document.getElementById("docError");
+    const docError = document.getElementById("docError");
     // const numDocError = document.getElementById("numDocError");
     // const adressError = document.getElementById("adressError");
 
@@ -34,6 +35,7 @@ const onSubmit = e => {
         validForm = false
     }
 
+
     // Apellido *
     if (validateStrings(lastNameInput.value)) {
         const validStg = validateStgLength(lastNameInput.value, 2, 20)
@@ -54,30 +56,25 @@ const onSubmit = e => {
         validForm = false
     }
 
+    // Seleccionar Documento 
+    if ( dniInput.chequed || cuilInput.chequed ) {
+        docError.innerText = ""
+        docError.style.display = "none"
+    } else {
+        docError.innerText = "Debe seleccionar un tipo de documento."
+        docError.style.display = "block"
+        validForm = false
+    }
 
-    // Stock *
-    // if (!validatePostiveNumber(stockInput.value)) {
-    //     stockInput.ariaInvalid = true
-    //     stockError.innerText = "Debe ser un número positivo"
-    //     stockError.style.display = "block"
-    //     validForm = false
-    // } else if (!validateInt(parseInt(stockInput.value))) {
-    //     stockInput.ariaInvalid = true
-    //     stockError.innerText = "Debe ser un número entero"
-    //     stockError.style.display = "block"
-    //     validForm = false
-    // } else {
-    //     stockInput.ariaInvalid = false
-    //     stockError.innerText = ""
-    //     stockError.style.display = "none"
-    // }
 
-    
+
+
     if (validForm) {
         const newPerson = {
             name: nameInput.value,
             lastName: lastNameInput.value,
-            // doc: docInput.checked,
+            dni: dniInput.chequed,
+            cuil: cuilInput.chequed,
             // numDoc: parseFloat(numDocInput.value),
             // adress: adressInput.value
         };

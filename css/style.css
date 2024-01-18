@@ -19,7 +19,7 @@ button {
     width: 11rem;
 }
 button:hover {
-    background-color: rgba(248, 221, 66, 0.938)
+    background-color: rgba(248, 221, 66, 0.938);
 }
 button:active {
     background-color: #081e339a;
@@ -68,10 +68,10 @@ input:focus {
     flex-direction: row;
 }
 .form-control[aria-invalid="true"] {
-    outline: 2px solid rgb(255, 77, 130);
+    outline: 2px solid rgba(248, 221, 66, 0.938);
 }
 .input-msg-error {
-    color: rgb(255, 77, 130);
+    color: rgba(248, 221, 66, 0.938);
     font-size: 0.8rem;
     display: none;
     margin: 0.25rem;
