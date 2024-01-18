@@ -1,7 +1,5 @@
-// Nombre *
-// Marca 
-// Categoría *
-// Descripcion corta *
+// Nombre
+// Apellido 
 
 const validateStrings = (string) => {
     const regex = new RegExp("^[A-Za-z Ññ]+$")
@@ -18,19 +16,9 @@ const validateStgLength = (stg, minLength, maxLength) => {
     }
 }
 
-// Precio *
-// Stock *
-// Edad desde y hasta
+// Documento
 
 const validatePostiveNumber = num => num >= 0
 
 const validateInt = num => Number.isInteger(num)
 
-// Foto *
-
-// Emails
-
-const validateEmails = (email) => {
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return regex.test(email)
-}

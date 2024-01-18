@@ -11,7 +11,7 @@
     <form id="formPerson" onsubmit="onSubmit(event)">
         <div class="itemContainer">
           <label for="name" class="form-label">Primer nombre:</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <input type="text" class="form-control" id="name" name="name">
           <p id="nameError" class="input-msg-error"></p>
         </div>
         <div class="itemContainer">
@@ -20,12 +20,12 @@
             <p id="lastNameError" class="input-msg-error"></p>
           </div>
         <div class="itemContainer">
-            <label for="" class="form-label">Tipo de documento</label>
+            <label for="doc" class="form-label">Tipo de documento</label>
             <div class="itemContainerRadio">
-                <input type="radio" class="form-input-radio" id="dni" name="doc">
-                <label for="dni" class="form-label-radio">DNI</label>
-                <input type="radio" class="form-input-radio" id="cuil" name="doc">
-                <label for="cuil" class="form-label-radio">CUIL</label>
+                <input type="radio" class="form-input-radio" id="doc" name="doc">
+                <label for="doc" class="form-label-radio">DNI</label>
+                <input type="radio" class="form-input-radio" id="doc" name="doc">
+                <label for="doc" class="form-label-radio">CUIL</label>
             </div>
             <p id="docError" class="input-msg-error"></p>
         </div>

@@ -23,10 +23,13 @@ const onSubmit = e => {
     let validForm = true
     const nameInput = document.getElementById("name")
     const lastNameInput = document.getElementById("lastName")
+    const docInput = document.getElementById("doc")
+    const numDocInput = document.getElementById("numDoc")
+    const adressInput = document.getElementById("adress")
 
     // Nombre *
     if (validateStrings(nameInput.value)) {
-        const validStg = validateStgLength(nameInput.value, 2, 30)
+        const validStg = validateStgLength(nameInput.value, 3, 10)
         if (validStg === true) {
             nameInput.ariaInvalid = false
             nameError.innerText = ""
@@ -43,6 +46,27 @@ const onSubmit = e => {
         nameError.style.display = "block"
         validForm = false
     }
+
+    // Apellido *
+    if (validateStrings(lastNameInput.value)) {
+        const validStg = validateStgLength(lastNameInput.value, 2, 20)
+        if (validStg === true) {
+            lastNameInput.ariaInvalid = false
+            lastNameError.innerText = ""
+            lastNameError.style.display = "none"
+        } else {
+            lastNameInput.ariaInvalid = true
+            lastNameError.innerText = validStg
+            lastNameError.style.display = "block"
+            validForm = false
+        }
+    } else {
+        lastNameInput.ariaInvalid = true
+        lastNameError.innerText = "Debe colocar caracteres alfabéticos."
+        lastNameError.style.display = "block"
+        validForm = false
+    }
+
     // Marca 
     if (brandInput.value.length > 0) {
         if (validateStrings(brandInput.value)) {

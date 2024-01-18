@@ -68,11 +68,13 @@ input:focus {
     flex-direction: row;
 }
 .form-control[aria-invalid="true"] {
-    outline: 2px solid rgb(182, 17, 17);
+    outline: 2px solid rgb(255, 77, 130);
 }
 .input-msg-error {
+    color: rgb(255, 77, 130);
+    font-size: 0.8rem;
     display: none;
-    color: rgb(182, 17, 17)
+    margin: 0.25rem;
 }
 
 
