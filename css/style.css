@@ -107,7 +107,7 @@ input:focus {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 46.75rem;
+        width: 46gitrem;
     }
     .itemContainer {
         flex-direction: column;
@@ -115,6 +115,6 @@ input:focus {
         width: 22rem;
     }
     .itemContainerAdress {
-        width: 46.75rem;
+        width: 45rem;
     }
 }
