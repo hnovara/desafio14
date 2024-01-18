@@ -16,7 +16,7 @@ const onSubmit = e => {
 
 
     // Nombre *
-    if (validateStrings(nameInput.value)) {
+    if (validateStringsName(nameInput.value)) {
         const validStg = validateStgLength(nameInput.value, 3, 10);
         if (validStg === true) {
             nameInput.ariaInvalid = false
@@ -30,14 +30,14 @@ const onSubmit = e => {
         }
     } else {
         nameInput.ariaInvalid = true
-        nameError.innerText = "Debe colocar caracteres alfabéticos."
+        nameError.innerText = "Debe colocar caracteres alfabéticos, sin espacios y de la segunda letra en adelante debe ser minúscula."
         nameError.style.display = "block"
         validForm = false
     }
 
 
     // Apellido *
-    if (validateStrings(lastNameInput.value)) {
+    if (validateStringsLastName(lastNameInput.value)) {
         const validStg = validateStgLength(lastNameInput.value, 2, 20)
         if (validStg === true) {
             lastNameInput.ariaInvalid = false
@@ -51,7 +51,7 @@ const onSubmit = e => {
         }
     } else {
         lastNameInput.ariaInvalid = true
-        lastNameError.innerText = "Debe colocar caracteres alfabéticos."
+        lastNameError.innerText = "Debe colocar caracteres alfabéticos y sin espacios."
         lastNameError.style.display = "block"
         validForm = false
     }
