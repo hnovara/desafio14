@@ -57,7 +57,7 @@ const onSubmit = e => {
     }
 
     // Seleccionar Documento 
-    if ( dniInput.chequed || cuilInput.chequed ) {
+    if ( dniInput.checked || cuilInput.checked ) {
         docError.innerText = ""
         docError.style.display = "none"
     } else {
@@ -73,8 +73,8 @@ const onSubmit = e => {
         const newPerson = {
             name: nameInput.value,
             lastName: lastNameInput.value,
-            dni: dniInput.chequed,
-            cuil: cuilInput.chequed,
+            dni: dniInput.checked,
+            cuil: cuilInput.checked,
             // numDoc: parseFloat(numDocInput.value),
             // adress: adressInput.value
         };
