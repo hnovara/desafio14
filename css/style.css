@@ -1,0 +1,40 @@
+body {
+    font-size: 16px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+.itemContainer {
+    border: 0.063rem solid black;
+    padding: 0.125rem;
+    display: flex;
+    flex-direction: column;
+
+}
+.itemContainerRadio {
+    border: 0.063rem solid black;
+    padding: 0.125rem;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.form-control[aria-invalid="true"] {
+    outline: 2px solid rgb(182, 17, 17);
+}
+.input-msg-error {
+    display: none;
+    color: rgb(182, 17, 17)
+}
+
+
+
+
+
+
+
+
+
+
+/* @media (min-width: 425px) */

@@ -9,30 +9,36 @@
 </head>
 <body>
     <form id="formPerson" onsubmit="onSubmit(event)">
-        <div class="">
+        <div class="itemContainer">
           <label for="name" class="form-label">Primer nombre:</label>
           <input type="text" class="form-control" id="name" name="name" required>
+          <p id="nameError" class="input-msg-error"></p>
         </div>
-        <div class="">
+        <div class="itemContainer">
             <label for="lastName" class="form-label">Primer apellido:</label>
             <input type="text" class="form-control" id="lastName" name="lastName" required>
+            <p id="lastNameError" class="input-msg-error"></p>
           </div>
-        <div class="">
+        <div class="itemContainer">
             <label class="form-label">Tipo de documento</label>
-
-            <input type="radio" class="form-radio" id="dni" name="doc" checked>
-            <label for="dni" class="form-label">DNI</label>
-
-            <input type="radio" class="form-radio" id="cuil" name="doc">
-            <label for="cuil" class="form-label">CUIL</label>
+            <div class="itemContainerRadio">
+                <input type="radio" class="form-radio" id="dni" name="doc">
+                <label for="dni" class="form-label">DNI</label>
+                <input type="radio" class="form-radio" id="cuil" name="doc">
+                <label for="cuil" class="form-label">CUIL</label>
+            </div>
+            <p id="docError" class="input-msg-error"></p>
         </div>
-
-
-
-
-
-
-
+        <div class="itemContainer">
+            <label for="numDoc" class="form-label">Número de documento:</label>
+            <input type="number" class="form-control" id="numDoc" name="numDoc" min="0">
+            <p id="numDocError" class="input-msg-error"></p>
+        </div>
+        <div class="itemContainer">
+            <label for="adress" class="form-label">Dirección:</label>
+            <input type="text" class="form-control" id="adress" name="adress">
+            <p id="adressError" class="input-msg-error"></p>
+        </div>
         <button type="submit" class="">Enviar</button>
     </form>
     <script src="../js/validations.js"></script>
