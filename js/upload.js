@@ -6,13 +6,13 @@ const onSubmit = e => {
     const dniInput = document.getElementById("dni");
     const cuilInput = document.getElementById("cuil");
     // const numDocInput = document.getElementById("numDoc");
-    // const adressInput = document.getElementById("adress");
+    const adressInput = document.getElementById("adress");
 
     const nameError = document.getElementById("nameError");
     const lastNameError = document.getElementById("lastNameError");
     const docError = document.getElementById("docError");
     // const numDocError = document.getElementById("numDocError");
-    // const adressError = document.getElementById("adressError");
+    const adressError = document.getElementById("adressError");
 
 
     // Nombre *
@@ -68,6 +68,30 @@ const onSubmit = e => {
 
 
 
+    // Dirección
+    if (validateDirec(adressInput.value)) {
+        const validStg = validateStgLength(adressInput.value, 10, 200);
+        if (validStg === true) {
+          adressInput.ariaInvalid = false
+          adressError.innerText = "";
+          adressError.style.display = "none";
+        } else {
+            adressInput.ariaInvalid = true
+            adressError.innerText = validStg
+            adressError.style.display = "block"
+            validForm = false
+        }
+      } else {
+        adressInput.ariaInvalid = true
+        adressError.innerText = "Seleccione una dirección válida."
+        adressError.style.display = "block"
+        validForm = false
+      }
+
+
+
+
+
 
     if (validForm) {
         const newPerson = {
@@ -76,7 +100,7 @@ const onSubmit = e => {
             dni: dniInput.checked,
             cuil: cuilInput.checked,
             // numDoc: parseFloat(numDocInput.value),
-            // adress: adressInput.value
+            adress: adressInput.value
         };
         const stgPerson = JSON.stringify(newPerson);
         localStorage.setItem("person", stgPerson)
@@ -84,4 +108,6 @@ const onSubmit = e => {
     } 
     else alert("Debe completar correctamente sus datos")
 }
+
+
 
