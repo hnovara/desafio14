@@ -59,7 +59,7 @@ input:focus {
     /* border: 0.063rem solid black; */
     display: flex;
     flex-direction: column;
-    height: 4.5rem;
+    height: 7rem;
     padding: 0.5rem;
 }
 .itemContainerRadio {
@@ -81,14 +81,19 @@ input:focus {
 @media (min-width: 425px) {
     .itemContainer {
         display: flex;
-        flex-direction: row;
-        height: 3rem;
+        flex-direction: column;
+        height: 5rem;
         width: 22.5rem;
     }
     .itemContainerRadio {
         align-items: center;
         height: 1.75rem;
         width: 12.5rem;
+    }
+    .noErrorContainer {
+        display: flex;
+        flex-direction: row;
+        width: 22rem;
     }
     .form-label {
         width: 12rem;

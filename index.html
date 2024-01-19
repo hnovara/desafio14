@@ -10,28 +10,36 @@
 <body>
     <form id="uploadForm" onsubmit="onSubmit(event)">
         <div class="itemContainer">
-          <label for="name" class="form-label">Primer nombre:</label>
-          <input type="text" class="form-control" id="name" name="name">
-          <p id="nameError" class="input-msg-error"></p>
+            <div class="noErrorContainer">
+                <label for="name" class="form-label">Primer nombre:</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <p id="nameError" class="input-msg-error"></p> 
+        </div>
+        <div class="itemContainer ">
+            <div class="noErrorContainer">
+                <label for="lastName" class="form-label">Primer apellido:</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+            <p id="lastNameError" class="input-msg-error"></p>
         </div>
         <div class="itemContainer">
-            <label for="lastName" class="form-label">Primer apellido:</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" required>
-            <p id="lastNameError" class="input-msg-error"></p>
-          </div>
-        <div class="itemContainer">
-            <label for="" class="form-label">Tipo de documento</label>
-            <div class="itemContainerRadio">
-                <input type="radio" class="form-input-radio" id="dni" name="doc">
-                <label for="dni" class="form-label-radio">DNI</label>
-                <input type="radio" class="form-input-radio" id="cuil" name="doc">
-                <label for="cuil" class="form-label-radio">CUIL</label>
+            <div class="noErrorContainer">
+                <label for="" class="form-label">Tipo de documento</label>
+                <div class="itemContainerRadio">
+                    <input type="radio" class="form-input-radio" id="dni" name="doc">
+                    <label for="dni" class="form-label-radio">DNI</label>
+                    <input type="radio" class="form-input-radio" id="cuil" name="doc">
+                    <label for="cuil" class="form-label-radio">CUIL</label>
+                </div>
             </div>
             <p id="docError" class="input-msg-error"></p>
         </div>
         <div class="itemContainer">
-            <label for="numDoc" class="form-label">Número de documento:</label>
-            <input type="textDocument" class="form-control" id="numDoc" name="numDoc" required>
+            <div class="noErrorContainer">
+                <label for="numDoc" class="form-label">Número de documento:</label>
+                <input type="textDocument" class="form-control" id="numDoc" name="numDoc" required>
+            </div>
             <p id="numDocError" class="input-msg-error"></p>
         </div>
         <div class="itemContainer itemContainerAdress">
