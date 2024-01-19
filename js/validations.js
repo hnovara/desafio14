@@ -21,12 +21,8 @@ const validateStgLength = (stg, minLength, maxLength) => {
     }
 }
 
-// Documento
-
-const validatePostiveNumber = num => num >= 0
-
-const validateInt = num => Number.isInteger(num)
-
+// Número de documento
+    
 
 // Dirección
 const validateDirec = (string) => {

@@ -5,13 +5,13 @@ const onSubmit = e => {
     const lastNameInput = document.getElementById("lastName");
     const dniInput = document.getElementById("dni");
     const cuilInput = document.getElementById("cuil");
-    // const numDocInput = document.getElementById("numDoc");
+    const numDocInput = document.getElementById("numDoc");
     const adressInput = document.getElementById("adress");
 
     const nameError = document.getElementById("nameError");
     const lastNameError = document.getElementById("lastNameError");
     const docError = document.getElementById("docError");
-    // const numDocError = document.getElementById("numDocError");
+    const numDocError = document.getElementById("numDocError");
     const adressError = document.getElementById("adressError");
 
 
@@ -56,6 +56,7 @@ const onSubmit = e => {
         validForm = false
     }
 
+
     // Seleccionar Documento 
     if ( dniInput.checked || cuilInput.checked ) {
         docError.innerText = ""
@@ -67,6 +68,23 @@ const onSubmit = e => {
     }
 
 
+    // Número de documento
+    if (dniInput.checked) {
+        if (!/^(\d{1,3}(?:\.\d{3}){0,2}|\d{4,8})$/.test(numDocInput.value)) {
+            numDocInput.ariaInvalid = true
+            numDocError.innerText = "Formato de DNI inválido"
+            numDocError.style.display = "block"
+            validForm = false
+        }
+    } else if (cuilInput.checked) {
+        if (!/^\d{2}-\d{7,9}-\d{1}$/.test(numDocInput.value) && !/^\d{11}$/.test(numDocInput.value)) {
+            numDocInput.ariaInvalid = true
+            numDocError.innerText = "Formato de CUIL inválido"
+            numDocError.style.display = "block"
+            validForm = false
+        }
+    }
+        
 
     // Dirección
     if (validateDirec(adressInput.value)) {
@@ -99,7 +117,7 @@ const onSubmit = e => {
             lastName: lastNameInput.value,
             dni: dniInput.checked,
             cuil: cuilInput.checked,
-            // numDoc: parseFloat(numDocInput.value),
+            numDoc: numDocInput.value,
             adress: adressInput.value
         };
         const stgPerson = JSON.stringify(newPerson);
